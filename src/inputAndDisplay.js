@@ -15,8 +15,12 @@ const InputAndDisplay = () => {
   };
 
   const inputValueBlurHandler = () => {
-    if (list.indexOf(value)) {
-      if (list.length > 1) {
+    if (value === "") {
+      return;
+    }
+
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].cont === value) {
         inputButton.disabled = true;
         outputDiv.style.border = "1px solid red";
       }
@@ -29,7 +33,7 @@ const InputAndDisplay = () => {
     setList([...list, { id: nextId++, cont: value }]);
     const newDiv = document.createElement("div");
 
-    newDiv.innerText = list.pop().cont;
+    newDiv.innerText = value;
     outputDiv.appendChild(newDiv);
   };
 
