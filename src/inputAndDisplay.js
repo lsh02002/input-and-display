@@ -23,6 +23,8 @@ const InputAndDisplay = () => {
       if (list[i].cont === value) {
         inputButton.disabled = true;
         outputDiv.style.border = "1px solid red";
+
+        return;
       }
     }
   };
